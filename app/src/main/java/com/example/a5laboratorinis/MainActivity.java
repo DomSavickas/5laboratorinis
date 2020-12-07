@@ -19,7 +19,6 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
 
     TextView tvContent;
-    TextView showCurrency;
     TextView inputCurrency;
     ListView simpleListView;
     ArrayAdapter<String> adapter;
