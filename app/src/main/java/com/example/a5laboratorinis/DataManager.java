@@ -26,7 +26,7 @@ public class DataManager {
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setReadTimeout(10000);
         conn.setConnectTimeout(15000);
-        conn.setRequestMethod("GET");
+        conn.setRequestMethod(Constants.METHOD_GET);
         conn.setDoInput(true);
         conn.connect();
         return conn.getInputStream();

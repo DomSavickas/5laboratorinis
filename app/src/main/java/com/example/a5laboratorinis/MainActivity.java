@@ -15,14 +15,20 @@ import java.net.URL;
 public class MainActivity extends AppCompatActivity {
 
     TextView tvContent;
+    TextView showCurrency;
+    TextView inputCurrency;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.tvContent = findViewById(R.id.tvContent);
+        this.showCurrency = findViewById(R.id.showCurrency);
+        this.inputCurrency = findViewById(R.id.inputCurrency);
     }
 
     public void onBtnDownloadClick(View view) {
+        String input = inputCurrency.getText().toString();
+        showCurrency.setText(input);
         this.tvContent.setText("Loading...");
         new DataLoader(){
             @Override
@@ -30,6 +36,6 @@ public class MainActivity extends AppCompatActivity {
             {
                 tvContent.setText(result);
             }
-        }.execute("USD");
+        }.execute(input);
     }
 }

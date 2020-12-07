@@ -14,7 +14,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class XmlParser {
     public static String getRateFromECB(InputStream stream, String currencyCode) throws IOException {
-        String result = "";
+        String result = "There is no information about this currency";
         try {
             DocumentBuilderFactory xmlDocFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder xmlDocBuilder = xmlDocFactory.newDocumentBuilder();
@@ -23,11 +23,11 @@ public class XmlParser {
             NodeList rateNodes = doc.getElementsByTagName(Constants.CUBE_NODE);
             for (int i = 0; i < rateNodes.getLength(); ++i) {
                 Element cube = (Element) rateNodes.item(i);
-                if(cube.hasAttribute("currency")){
-                    String currencyName = cube.getAttribute("currency");
+                if(cube.hasAttribute(Constants.CURRENCY)){
+                    String currencyName = cube.getAttribute(Constants.CURRENCY);
                     if(currencyName.equals(currencyCode))
                     {
-                        result = cube.getAttribute("rate");
+                        result = cube.getAttribute(Constants.RATE);
                         break;
                     }
                 }
