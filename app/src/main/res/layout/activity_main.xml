@@ -27,14 +27,6 @@
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <TextView
-        android:id="@+id/showCurrency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvContent" />
-
     <EditText
         android:id="@+id/inputCurrency"
         android:layout_width="191dp"
@@ -42,8 +34,17 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/btnDownload"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ListView
+        android:id="@+id/simpleListView"
+        android:layout_width="409dp"
+        android:layout_height="614dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvContent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
