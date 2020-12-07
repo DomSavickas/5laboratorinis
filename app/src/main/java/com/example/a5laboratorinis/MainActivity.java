@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
             {
                 arrayList.add(input +" - "+ result);
                 adapter.notifyDataSetChanged();
-                // tvContent.setText(input +" - "+ result);
                 tvContent.setText("Complete");
             }
         }.execute(input);
